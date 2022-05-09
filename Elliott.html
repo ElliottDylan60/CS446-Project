@@ -1,0 +1,255 @@
+<html>
+<style>
+	/* Classes Taken */
+	#ClassesTaken{
+		background-color: red;
+		width: 500px;
+		height: 500px;
+		margin: auto;
+	}
+	#ClassesTaken h1{
+		text-align: center;
+		font-size: 40px;
+	}
+	/* All Classes */
+	#AllClasses{
+		background-color: green;
+		width: 500px;
+		height: 500px;
+		margin: auto;
+	}
+	#AllClasses h1{
+		text-align: center;
+		font-size: 40px;
+	}
+	/* Collapsible Menu */
+	.collapsible {
+		background-color: #555;
+		color: white;
+		cursor: pointer;
+		padding: 18px;
+		width: 100px;
+		border: none;
+		text-align: center;
+		outline: none;
+		font-size: 15px;
+		margin-left: 10px;
+	}
+	.active, .collapsible:hover {
+		background-color: #777;
+	}
+	.content {
+		padding: 0 18px;
+		display: none;
+		overflow: hidden;
+		background-color: #f1f1f1;
+		position: absolute;
+		margin-left: 10px;
+	}
+	
+	.Filter{
+		display: inline-block;
+	}
+	.search{
+		display: inline-block;
+		float: right;
+		margin-right: 10px;
+		margin-top: 15px;
+	}
+	/* Class List */
+	.classList{
+		width: 450px;
+		height: 332px;
+		margin: auto;
+		margin-top: 20px;
+		background-color: white;
+		padding-left: 10px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.classButton{
+		background-color: #555;
+		color: white;
+		cursor: pointer;
+		padding: 18px;
+		width: 425px;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+		margin-top: 10px;
+	}
+	.classContent{
+		padding: 0 18px;
+		width: 370px;
+		display: none;
+		overflow: hidden;
+		background-color: #f1f1f1;
+		margin-left: 10px;
+	}
+</style>
+<head>
+	<title>CS 446 Lab 5</title>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- Classes Taken -->
+		<div id="ClassesTaken">
+			<h1>Classes Taken</h1>
+			<div class="Filter">
+				<button type="button" class="collapsible">Filter</button>
+				<div class="content">
+					<input type="checkbox">Class Name</input>
+					<input type="checkbox">Course Number</input>
+				</div>
+			</div>
+			
+			<div class="search">
+				<form>
+					<input type="text" placeholder="Serach..." name="serach">
+					<button type="submit">Search</button>
+				</form>
+			</div>
+			<div class = "classList">
+				<div>
+					<div>
+						<button type="button" class="classButton">CS 446 | User Interface Design</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 110 | Program Fundamentals I</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 111 | Program Fundamentals II</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 112 | Fondations of Computer Science</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 301 | Data Structures</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 302 | Advanced Data Structures and File Processing</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 311 | Computer Architecture I</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 312 | Computer Architecture II</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 325 | Technical Writing in Computer Science</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- All Classes -->
+		<div id="AllClasses">
+			<h1>All Classes</h1>
+			<div class="Filter">
+				<button type="button" class="collapsible">Filter</button>
+				<div class="content">
+					<input type="checkbox">Class Name</input>
+					<input type="checkbox">Course Number</input>
+				</div>
+			</div>
+			
+			<div class="search">
+				<form>
+					<input type="text" placeholder="Serach..." name="serach">
+					<button type="submit">Search</button>
+				</form>
+			</div>
+			<div class = "classList">
+				<div>
+					<div>
+						<button type="button" class="classButton">CS 361 | Principles of Language Deisng I</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 362 | Principles of Language Deisng II</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 380 | Introduction to Software Engineering</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					<div>
+						<button type="button" class="classButton">CS 392 | Lab Experience in Teaching Computer Science</button>
+						<div class="classContent">
+							<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+<script>
+
+// Code to expand collasible filter button
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+// Code to expand collasible class buttons
+var coll = document.getElementsByClassName("classButton");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>

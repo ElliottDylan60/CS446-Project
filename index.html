@@ -1,0 +1,236 @@
+<html>
+<head>
+	<title>CS 446 Lab 5</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<style>
+</style>
+<body>
+	<div id="wrapper">
+	<div id="header">
+		<div id="test"></div>
+		<img id="logo" src="logo.png">
+	</div>
+	<!-- Left Column -->
+	<div id="Lcolumn">
+		<div id="Undergraduate">
+			<button type="button" class="Colcollapsible">Undergraduate</button>
+			<div class="Colcontent">
+				<ul>
+					<li><a href="https://www.cwu.edu/computer-science/undergraduate-overview">Overview</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/computer-science-major">Major</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/computer-science-minors">Minor</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/current-undergraduate-students">Current Students</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/cs-honor-graduates">Honored Students</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="Graduate">
+			<button type="button" class="Colcollapsible">Graduate</button>
+			<div class="Colcontent">
+				<ul>
+					<li><a href="https://www.cwu.edu/computer-science/computational-science-masters-degree-program">Overview</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/prospective-students-and-funding">Prospective Students</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/current-students">Current Students</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/guidelines">Guidelines</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/curriculum">Curriculum</a></li>
+					<li><a href="https://www.cwu.edu/computer-science/contact-information">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<br>
+		<div id="Contact">
+			<button type="button" class="ContactButton" href="https://www.cwu.edu/computer-science/contact-information">Contact</button>
+		</div>
+		
+		
+	</div>
+	<div id="column">
+	<!-- Tabs at top of page -->
+	<div class="tabs">
+        <div class="tab">
+          <input
+            type="radio"
+            name="css-tabs"
+            id="tab-1"
+            checked
+            class="tab-switch"
+          />
+          <label for="tab-1" class="tab-label">Admission Requirements</label>
+          <div class="tab-content">
+            Admission to the computer science major or minor is not selective; 
+			students may declare at any time. However, progress in the major/minor 
+			is dependent upon earning certain grades in prerequisite courses. 
+			The grade threshold is a C.  Applications will be accepted through the
+			last day of classes (i.e., the week before finals) of the fall, winter, 
+			and spring quarters for admission the following quarter. <br><br> The 
+			computer science department believes that advising is one of the keys to 
+			success in an undergraduate program. To that end, majors and minors are 
+			encouraged to meet with a computer science advisor every term in order 
+			to register. Advisors and advising times are listed with the CS office.
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch" />
+          <label for="tab-2" class="tab-label">Cs Major</label>
+          <div class="tab-content">
+            <p>
+              In order to expose computer science majors to a broad theoretical
+              base while emphasizing the laboratory experience, students will
+              complete the CS core courses. To add depth and flexibility to
+              their academic programs, with a faculty major advisor, students
+              will work out a focus area and choose the elective courses
+              approved by the department. A specific focus may be developed in
+              many areas of computer science; examples include: software
+              engineering, intelligent systems, computational science, computer
+              graphics, visualization and computer vision, human-computer
+              interaction, big data analytics, and cybersecurity.
+            </p>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-3" class="tab-switch" />
+          <label for="tab-3" class="tab-label">Program Requirements</label>
+          <div class="tab-content">
+            <p>
+              In addition to the courses listed in the required courses listed
+              in the Program Curriclum, students must complete at least 20
+              credits of electives. Of these 20, at least 12 must be from CS
+              (excluding CS 490, CS 495, and CS 496).
+            </p>
+          </div>
+        </div>
+      </div>
+		<!-- Classes Taken -->
+		<div id="ClassesTaken">
+			<h1>Classes Taken</h1>
+			<div class="Filter">
+				<button type="button" class="collapsible">Filter</button>
+				<div class="content">
+					<input type="checkbox">Class Name</input>
+					<input type="checkbox">Course Number</input>
+				</div>
+				<button type="button" class="ContactButton" style="background-color: #555;">Remove</button>
+			</div>
+			
+			<div class="search">
+				<form>
+					<input type="text" placeholder="Serach..." name="serach" style="width: 150px;">
+					<button type="submit">Search</button>
+				</form>
+			</div>
+			<div class = "classList">
+				<div id="list1">
+				</div>
+			</div>
+		</div>
+		<!-- All Classes -->
+		<div id="AllClasses">
+			<h1>All Classes</h1>
+			<div class="Filter">
+				<button type="button" class="collapsible">Filter</button>
+				<div class="content">
+					<input type="checkbox">Class Name</input>
+					<input type="checkbox">Course Number</input>
+				</div>
+				<button type="button" class="ContactButton" style="background-color: #555;">Add</button>
+			</div>
+			
+			<div class="search">
+				<form>
+					<input type="text" placeholder="Serach..." name="serach" style="width: 150px;">
+					<button type="submit">Search</button>
+				</form>
+			</div>
+			<div class = "classList">
+				<div id="list">
+				</div>
+			</div>
+			
+		</div>
+		</div>
+	<!-- Right Column -->
+	<div id="Rcolumn">
+	</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script>
+const TakenClasses = ["CS 446 | User Interface Design",
+"CS 110 | Program Fundamentals I",
+"CS 111 | Program Fundamentals II",
+"CS 112 | Fondations of Computer Science",
+"CS 301 | Data Structures",
+"CS 302 | Advanced Data Structures and File Processing",
+"CS 311 | Computer Architecture I",
+"CS 312 | Computer Architecture II",
+"CS 325 | Technical Writing in Computer Science"];
+const AllClasses = ["CS 361 | Principles of Language Deisng I", 
+"CS 362 | Principles of Language Deisng II", 
+"CS 380 | Introduction to Software Engineering", 
+"CS 392 | Lab Experience in Teaching Computer Science"];
+
+// Code to expand collasible filter button
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+// Code to expand left column button
+var coll = document.getElementsByClassName("Colcollapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+// Code to place all classes taken buttons
+var i = 0;
+var str = "";
+TakenClasses.forEach(element =>{
+	str += '<div><button type="button" class="classButton"><input type="checkbox"></input>'+TakenClasses[i++]+'<i class="arrow down"></i></button><div class="classContent"><p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div>';
+	
+});
+document.getElementById("list1").innerHTML = str;
+
+i = 0;
+// Code to place all class buttons
+var str = "";
+AllClasses.forEach(element =>{
+	str += '<div><button type="button" class="classButton"><input type="checkbox"></input>'+AllClasses[i++]+'<i class="arrow down"></i></button><div class="classContent"><p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div>';
+	
+});
+document.getElementById("list").innerHTML = str;
+
+// Code to expand collasible class buttons
+var coll = document.getElementsByClassName("classButton");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+</script>
+</body>
+</html>

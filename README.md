@@ -9,17 +9,19 @@ Nathnael Seleba
 
 ## Problem Description
 
-CWU’s website is a pain to navigate and understand. The User’s goal when visiting these pages is to find the information they are looking for.
+CWU’s website is a pain to navigate and understand. The User’s goal when visiting these pages is to find the information they are looking for. This website will offer a place for our users to read class descriptions and learning outcomes and find when classes are available.
 
 ## Users
 
-Our users are CWU students, or staff, looking for CS major requirements.
+Our users are CWU students, or staff, looking for CS curriculum requirements.
 
 ## Typical tasks
 
 A user can select what site they have already taken to get an idea of what to take next
 A user can easily find other major requirements
 A user can see what classes are currently being offered
+A user can make an academic plan based on upcoming classes
+A user can learn mor about what a class teaches, such as description and learning outcomes
 
 ## Proposed programs
 

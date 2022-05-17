@@ -219,11 +219,10 @@ body{
 	padding-left: 10px;
 	overflow-y: scroll;
 }
-.classButton{
+.classButtonContainer{
 	background-color: #333333;
-	color: d3d3d3;
+	color: #d3d3d3;
 	cursor: pointer;
-	padding: 18px;
 	width: 410px;
 	border: none;
 	text-align: left;
@@ -232,13 +231,29 @@ body{
 	margin-top: 10px;
 	border-bottom: 0.25rem solid #a70632;
 }
+.classButton{
+	text-align: left; 
+	padding-left: 10px; 
+	width: 389px; 
+	height: 50px; 
+	background-color: rgba(0,0,0,0); 
+	border: rgba(0,0,0,0); 
+	color: #d3d3d3; 
+	font-size: 15px;
+}
+.classCheckbox{
+	float: left; 
+	margin-top: 18px;
+}
 .classContent{
 	padding: 0 18px;
-	width: 390px;
+	width: 370px;
 	display: none;
 	overflow: hidden;
 	background-color: #d3d3d3;
-	margin-left: 10px;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .arrow {
 	border: solid d3d3d3;

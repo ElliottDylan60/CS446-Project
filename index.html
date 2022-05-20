@@ -102,12 +102,11 @@
 			<div class="Filter">
 				<button type="button" class="collapsible">Filter</button>
 				<div class="content" style="width: 400px; padding: 10px;">
-					<input type="checkbox" id="" name="ClassName"><label for="ClassName">Class Name</label>
-					<input type="checkbox" id="" name="CourseNumber"><label for="CourseNumber">Course Number</label>
-					<input type="checkbox" id="" name="RequiredCourse"><label for="RequiredCourse">Required Courses</label>
-					<input type="checkbox" id="" name="ElectiveCoruse"><label for="ElectiveCoruse">Elective Courses</label>
+					<input type="checkbox" class="TakenFilter" name="Required" value="type"><label for="RequiredCourse">Required Courses</label>
+					<input type="checkbox" class="TakenFilter" name="Elective" value="type"><label for="ElectiveCoruse">Elective Courses</label>
 					<br>
-					<button style="float: right;">Apply</button>
+					<button style="float: right;" id="FilterTaken">Apply</button>
+					<button style="float: right;" id="FitlerTakenClear">Clear</button>
 				</div>
 				<button type="button" id="RemoveClass" class="ContactButton" style="background-color: #a70632;">Remove</button>
 			</div>
@@ -128,11 +127,12 @@
 			<h1>All Classes</h1>
 			<div class="Filter">
 				<button type="button" class="collapsible">Filter</button>
-				<div class="content">
-					<input type="checkbox">Class Name
-					<input type="checkbox">Course Number
-					<input type="checkbox">Required Courses
-					<input type="checkbox">Elective Courses
+				<div class="content" style="width: 400px; padding: 10px;">
+					<input type="checkbox" class="AllFilter" name="Required" value="type"><label for="RequiredCourse">Required Courses</label>
+					<input type="checkbox" class="AllFilter" name="Elective" value="type"><label for="ElectiveCoruse">Elective Courses</label>
+					<br>
+					<button style="float: right;" id="FilterAll">Apply</button>
+					<button style="float: right;" id="FilterAllClear">Clear</button>
 				</div>
 				<button type="button" id="AddClass" class="ContactButton" style="background-color: #a70632;">Add</button>
 			</div>
@@ -165,6 +165,7 @@ class Class{
 	}
 }
 const TakenClasses = [];
+const TakenClassesFilter = [];
 const AllClasses = [
 new Class("Program Fundamentals I", "CS 110", "Required"),
 new Class("Program Fundamentals II", "CS 111", "Required"),
@@ -186,11 +187,11 @@ new Class("Advanced Software Engineering", "CS 480", "Required"),
 new Class("Software Engineering Project", "CS 481", "Required"),
 new Class("Senior Colloquium ", "CS 489", "Required"),
 new Class("Lab Experience in Teaching Computer Science", "CS 492", "Required"),
-new Class("Calculus I", "MATH 172", "Required"),
-new Class("Sets and Logic", "MATH 260", "Required"),
-new Class("Discrete Mathematics", "MATH 330", "Required"),
-
+new Class("Calculus I", "MATH 172", "Elective"),
+new Class("Sets and Logic", "MATH 260", "Elective"),
+new Class("Discrete Mathematics", "MATH 330", "Elective")
 ];
+const AllClassesFilter = [];
 
 AddClasses();
 
@@ -238,7 +239,26 @@ for (i = 0; i < coll.length; i++) {
 		}
 	});
 }
-
+// FilterTaken Button
+var button = document.getElementById("FilterTaken");
+button.addEventListener("click", function(){
+	var check = document.getElementsByClassName("TakenFilter");
+	for(i = 0; i < check.length; i++){
+		if(check[i].checked){
+			if(check[i].name === "Required"){
+				var j = 0;
+				TakenClasses.forEach(element =>{
+					if(TakenClasses[j].type === "Required"){
+						console.log(TakenClasses[j]);
+						TakenClassesFilter.push(TakenClasses[j]);
+					}
+					j++;
+				});
+			}
+			AddTaken(TakenClassesFilter);
+		}
+	}
+});
 // Remove Button
 var remove = document.getElementById("RemoveClass");
 remove.addEventListener("click", function(){
@@ -283,7 +303,17 @@ add.addEventListener("click", function(){
 	AddClasses();
 });
 
+function AddTaken(Taken){
+	var i = 0;
+	var str = "";
+	TakenClassesFilter.forEach(element=>{
+		str += '<div class="classButtonContainer"><input type="checkbox" class="TakenClassCheckbox" value="'+ TakenClassesFilter[i].section +'"><button class="classButton" >'+ TakenClassesFilter[i].section + ' | ' + TakenClassesFilter[i++].name +'</button><div class="classContent"><p style="color: black;">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div>';
+	});
+	document.getElementById("list1").innerHTML = str;
+}
+function AddAll(All){
 
+}
 function AddClasses(){
 	// Code to place all classes taken buttons
 	var i = 0;

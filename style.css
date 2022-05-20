@@ -9,7 +9,31 @@ body{
 	background-size: cover;
 	background-position: center;
 }
-/* Page Formay */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+-- Desktop -- 
+
+*/
+@media screen and (min-width: 1000px){
+/* Page Format */
 #Lcolumn {
 	float: left;
 	width: 20%;
@@ -38,7 +62,8 @@ body{
 	margin: auto;
 	display: block;
 }
-/* Left Column */
+
+/* Left Column*/
 .Colcollapsible{
 	background-color: #333333;
 	color: #d3d3d3;
@@ -67,202 +92,452 @@ body{
 .Colcontent a:hover{
 	color: #a70632;
 }
-.ContactButton{
-	background-color: #333333;
-	color: #d3d3d3;
-	cursor: pointer;
-	padding: 18px;
-	width: 140px;
-	border: none;
-	text-align: center;
-	outline: none;
-	font-size: 15px;
-	margin-left: 10px;
-}
+/* Main Page */
 /* Clear floats after the columns */
 .wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tabs {
-	position: relative;
-	margin: 3rem 0;
-	background: #333333;
-	height: 14.75rem;
-	width: 35rem;
-	margin: auto;
-}
-.tabs::before,
-.tabs::after {
 	content: "";
 	display: table;
-}
-.tabs::after {
 	clear: both;
+  }
+  .tabs {
+	  position: relative;
+	  margin: 3rem 0;
+	  background: #333333;
+	  height: 14.75rem;
+	  width: 35rem;
+	  margin: auto;
+  }
+  .tabs::before,
+  .tabs::after {
+	  content: "";
+	  display: table;
+  }
+  .tabs::after {
+	  clear: both;
+  }
+  .tab {
+	  float: left;
+  }
+  .tab-switch {
+	  display: none;
+  }
+  .tab-label {
+	  position: relative;
+	  display: block;
+	  line-height: 2.75em;
+	  height: 3em;
+	  padding: 0 1.618em;
+	  background: #333333;
+	  color: #d3d3d3;
+	  cursor: pointer;
+	  top: 0;
+	  transition: all 0.25s;
+  }
+  .tab-label:hover {
+	  top: -0.25rem;
+	  transition: top 0.25s;
+  }
+  .tab-content {
+	  height: 12rem;
+	  width: 35rem;
+	  position: absolute;
+	  z-index: 1;
+	  top: 2.75em;
+	  left: 0;
+	  padding: 1.618rem;
+	  background: #333333;
+	  color: #d3d3d3;
+	  border-bottom: 0.25rem solid #a70632;
+	  opacity: 0;
+	  transition: all 0.35s;
+	  overflow-y: scroll;
+  }
+  .tab-switch:checked + .tab-label {
+	  background: #666666;
+	  color: #d3d3d3;
+	  border-top: 0.125rem solid #a70632;
+	  transition: all 0.35s;
+	  z-index: 1;
+	  top: -0.0625rem;
+  }
+  .tab-switch:checked + label + .tab-content {
+	  z-index: 2;
+	  opacity: 1;
+	  transition: all 0.35s;
+  }
+  .ContactButton{
+	  background-color: #333333;
+	  color: #d3d3d3;
+	  cursor: pointer;
+	  padding: 18px;
+	  width: 140px;
+	  border: none;
+	  text-align: center;
+	  outline: none;
+	  font-size: 15px;
+	  margin-left: 10px;
+  }
+  /* Classes Taken */
+  #ClassesTaken{
+	  background-color: #333333;
+	  width: 32rem;
+	  height: 32rem;
+	  margin: auto;
+  }
+  #ClassesTaken h1{
+	  text-align: center;
+	  font-size: 40px;
+	  color: #d3d3d3;
+  }
+  /* All Classes */
+  #AllClasses{
+	  background-color: #333333;
+	  width: 500px;
+	  height: 500px;
+	  margin: auto;
+  }
+  #AllClasses h1{
+	  text-align: center;
+	  font-size: 40px;
+	  color: #d3d3d3;
+  }
+  /* Collapsible Menu */
+  .collapsible {
+	  background-color: #a70632;
+	  color: d3d3d3;
+	  cursor: pointer;
+	  padding: 18px;
+	  width: 100px;
+	  border: none;
+	  text-align: center;
+	  outline: none;
+	  font-size: 15px;
+	  margin-left: 10px;
+  }
+  .active, .collapsible:hover {
+	  background-color: #666666;
+  }
+  .content {
+	  padding: 0 18px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #d3d3d3;
+	  position: absolute;
+	  margin-left: 10px;
+  }
+	  
+  .Filter{
+	  display: inline-block;
+  }
+  .search{
+	  display: inline-block;
+	  float: right;
+	  margin-right: 10px;
+	  margin-top: 15px;
+  }
+  /* Class List */
+  .classList{
+	  width: 450px;
+	  height: 332px;
+	  margin: auto;
+	  margin-top: 20px;
+	  background-color: d3d3d3;	
+	  padding-left: 10px;
+	  overflow-y: scroll;
+  }
+  .classButtonContainer{
+	  background-color: #333333;
+	  color: #d3d3d3;
+	  cursor: pointer;
+	  width: 410px;
+	  border: none;
+	  text-align: left;
+	  outline: none;
+	  font-size: 15px;
+	  margin-top: 10px;
+	  border-bottom: 0.25rem solid #a70632;
+  }
+  .classButton{
+	  text-align: left; 
+	  padding-left: 10px; 
+	  width: 389px; 
+	  height: 50px; 
+	  background-color: rgba(0,0,0,0); 
+	  border: rgba(0,0,0,0); 
+	  color: #d3d3d3; 
+	  font-size: 15px;
+  }
+  .classCheckbox{
+	  float: left; 
+	  margin-top: 18px;
+  }
+  .classContent{
+	  padding: 0 18px;
+	  width: 370px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #d3d3d3;
+	  margin-left: 20px;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+  }
+  .arrow {
+	  border: solid d3d3d3;
+	  border-width: 0 3px 3px 0;
+	  display: inline-block;
+	  padding: 3px;
+	  float: right;
+  }
+  .down {
+	  transform: rotate(45deg);
+	  -webkit-transform: rotate(45deg);
+  }
 }
-.tab {
-	float: left;
-}
-.tab-switch {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+-- Mobile -- 
+
+*/
+@media screen and (max-width: 1000px){
+/* Page Format */
+#Lcolumn {
 	display: none;
 }
-.tab-label {
-	position: relative;
+#column {
+	padding: 10px;
+}
+#Rcolumn {
+	display: none;
+}
+#header{
+	background-color: #000000;
+	width: 200px;
+	margin: auto;
+}
+#footer{
+
+}
+/* Header */
+#logo{
+	margin: auto;
 	display: block;
-	line-height: 2.75em;
-	height: 3em;
-	padding: 0 1.618em;
-	background: #333333;
-	color: #d3d3d3;
-	cursor: pointer;
-	top: 0;
-	transition: all 0.25s;
 }
-.tab-label:hover {
-	top: -0.25rem;
-	transition: top 0.25s;
-}
-.tab-content {
-	height: 12rem;
-	width: 35rem;
-	position: absolute;
-	z-index: 1;
-	top: 2.75em;
-	left: 0;
-	padding: 1.618rem;
-	background: #333333;
-	color: #d3d3d3;
-	border-bottom: 0.25rem solid #a70632;
-	opacity: 0;
-	transition: all 0.35s;
-	overflow-y: scroll;
-}
-.tab-switch:checked + .tab-label {
-	background: #666666;
-	color: #d3d3d3;
-	border-top: 0.125rem solid #a70632;
-	transition: all 0.35s;
-	z-index: 1;
-	top: -0.0625rem;
-}
-.tab-switch:checked + label + .tab-content {
-	z-index: 2;
-	opacity: 1;
-	transition: all 0.35s;
-}
-/* Classes Taken */
-#ClassesTaken{
-	background-color: #333333;
-	width: 500px;
-	height: 500px;
-	margin: auto;
-}
-#ClassesTaken h1{
-	text-align: center;
-	font-size: 40px;
-	color: #d3d3d3;
-}
-/* All Classes */
-#AllClasses{
-	background-color: #333333;
-	width: 500px;
-	height: 500px;
-	margin: auto;
-}
-#AllClasses h1{
-	text-align: center;
-	font-size: 40px;
-	color: #d3d3d3;
-}
-/* Collapsible Menu */
-.collapsible {
-	background-color: #a70632;
-	color: d3d3d3;
-	cursor: pointer;
-	padding: 18px;
-	width: 100px;
-	border: none;
-	text-align: center;
-	outline: none;
-	font-size: 15px;
-	margin-left: 10px;
-}
-.active, .collapsible:hover {
-	background-color: #666666;
-}
-.content {
-	padding: 0 18px;
-	display: none;
-	overflow: hidden;
-	background-color: #d3d3d3;
-	position: absolute;
-	margin-left: 10px;
-}
-	
-.Filter{
-	display: inline-block;
-}
-.search{
-	display: inline-block;
-	float: right;
-	margin-right: 10px;
-	margin-top: 15px;
-}
-/* Class List */
-.classList{
-	width: 450px;
-	height: 332px;
-	margin: auto;
-	margin-top: 20px;
-	background-color: d3d3d3;	
-	padding-left: 10px;
-	overflow-y: scroll;
-}
-.classButtonContainer{
-	background-color: #333333;
-	color: #d3d3d3;
-	cursor: pointer;
-	width: 410px;
-	border: none;
-	text-align: left;
-	outline: none;
-	font-size: 15px;
-	margin-top: 10px;
-	border-bottom: 0.25rem solid #a70632;
-}
-.classButton{
-	text-align: left; 
-	padding-left: 10px; 
-	width: 389px; 
-	height: 50px; 
-	background-color: rgba(0,0,0,0); 
-	border: rgba(0,0,0,0); 
-	color: #d3d3d3; 
-	font-size: 15px;
-}
-.classCheckbox{
-	float: left; 
-	margin-top: 18px;
-}
-.classContent{
-	padding: 0 18px;
-	width: 370px;
-	display: none;
-	overflow: hidden;
-	background-color: #d3d3d3;
-	margin-left: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-.arrow {
-	border: solid d3d3d3;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	float: right;
-}
-.down {
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
+
+/* Main Page */
+/* Clear floats after the columns */
+.wrapper:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  .tabs {
+	  position: relative;
+	  margin: 3rem 0;
+	  background: #333333;
+	  height: 14.75rem;
+	  width: 35rem;
+	  margin: auto;
+  }
+  .tabs::before,
+  .tabs::after {
+	  content: "";
+	  display: table;
+  }
+  .tabs::after {
+	  clear: both;
+  }
+  .tab {
+	  float: left;
+  }
+  .tab-switch {
+	  display: none;
+  }
+  .tab-label {
+	  position: relative;
+	  display: block;
+	  line-height: 2.75em;
+	  height: 3em;
+	  padding: 0 1.618em;
+	  background: #333333;
+	  color: #d3d3d3;
+	  cursor: pointer;
+	  top: 0;
+	  transition: all 0.25s;
+  }
+  .tab-label:hover {
+	  top: -0.25rem;
+	  transition: top 0.25s;
+  }
+  .tab-content {
+	  height: 12rem;
+	  width: 35rem;
+	  position: absolute;
+	  z-index: 1;
+	  top: 2.75em;
+	  left: 0;
+	  padding: 1.618rem;
+	  background: #333333;
+	  color: #d3d3d3;
+	  border-bottom: 0.25rem solid #a70632;
+	  opacity: 0;
+	  transition: all 0.35s;
+	  overflow-y: scroll;
+  }
+  .tab-switch:checked + .tab-label {
+	  background: #666666;
+	  color: #d3d3d3;
+	  border-top: 0.125rem solid #a70632;
+	  transition: all 0.35s;
+	  z-index: 1;
+	  top: -0.0625rem;
+  }
+  .tab-switch:checked + label + .tab-content {
+	  z-index: 2;
+	  opacity: 1;
+	  transition: all 0.35s;
+  }
+  .ContactButton{
+	  background-color: #333333;
+	  color: #d3d3d3;
+	  cursor: pointer;
+	  padding: 18px;
+	  width: 140px;
+	  border: none;
+	  text-align: center;
+	  outline: none;
+	  font-size: 15px;
+	  margin-left: 10px;
+  }
+  /* Classes Taken */
+  #ClassesTaken{
+	  background-color: #333333;
+	  width: 32rem;
+	  height: 32rem;
+	  margin: auto;
+  }
+  #ClassesTaken h1{
+	  text-align: center;
+	  font-size: 40px;
+	  color: #d3d3d3;
+  }
+  /* All Classes */
+  #AllClasses{
+	  background-color: #333333;
+	  width: 500px;
+	  height: 500px;
+	  margin: auto;
+  }
+  #AllClasses h1{
+	  text-align: center;
+	  font-size: 40px;
+	  color: #d3d3d3;
+  }
+  /* Collapsible Menu */
+  .collapsible {
+	  background-color: #a70632;
+	  color: d3d3d3;
+	  cursor: pointer;
+	  padding: 18px;
+	  width: 100px;
+	  border: none;
+	  text-align: center;
+	  outline: none;
+	  font-size: 15px;
+	  margin-left: 10px;
+  }
+  .active, .collapsible:hover {
+	  background-color: #666666;
+  }
+  .content {
+	  padding: 0 18px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #d3d3d3;
+	  position: absolute;
+	  margin-left: 10px;
+  }
+	  
+  .Filter{
+	  display: inline-block;
+  }
+  .search{
+	  display: inline-block;
+	  float: right;
+	  margin-right: 10px;
+	  margin-top: 15px;
+  }
+  /* Class List */
+  .classList{
+	  width: 450px;
+	  height: 332px;
+	  margin: auto;
+	  margin-top: 20px;
+	  background-color: d3d3d3;	
+	  padding-left: 10px;
+	  overflow-y: scroll;
+  }
+  .classButtonContainer{
+	  background-color: #333333;
+	  color: #d3d3d3;
+	  cursor: pointer;
+	  width: 410px;
+	  border: none;
+	  text-align: left;
+	  outline: none;
+	  font-size: 15px;
+	  margin-top: 10px;
+	  border-bottom: 0.25rem solid #a70632;
+  }
+  .classButton{
+	  text-align: left; 
+	  padding-left: 10px; 
+	  width: 389px; 
+	  height: 50px; 
+	  background-color: rgba(0,0,0,0); 
+	  border: rgba(0,0,0,0); 
+	  color: #d3d3d3; 
+	  font-size: 15px;
+  }
+  .classCheckbox{
+	  float: left; 
+	  margin-top: 18px;
+  }
+  .classContent{
+	  padding: 0 18px;
+	  width: 370px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #d3d3d3;
+	  margin-left: 20px;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+  }
+  .arrow {
+	  border: solid d3d3d3;
+	  border-width: 0 3px 3px 0;
+	  display: inline-block;
+	  padding: 3px;
+	  float: right;
+  }
+  .down {
+	  transform: rotate(45deg);
+	  -webkit-transform: rotate(45deg);
+  }
 }

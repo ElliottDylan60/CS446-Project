@@ -76,6 +76,21 @@ body{
 	font-size: 15px;
 	margin-left: 10px;
 }
+
+.Colcollapsible1:hover{
+	background-color: #0d8513;
+	color: hwb(105 1% 95%);
+	cursor: pointer;
+	padding: 18px;
+	width: 140px;
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	margin-left: 10px;
+	text-decoration:underline;
+
+}
 .Colcontent{
 	display: none;
 	overflow: hidden;
@@ -541,3 +556,70 @@ body{
 	  -webkit-transform: rotate(45deg);
   }
 }
+
+.space {
+	color: #d3d3d3;
+	cursor: pointer;
+	padding: 18px;
+	width: 140px;
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	margin-left: 10px;
+  }
+  .button1 {
+	background-color: white; 
+	color: black; 
+	border: 2px solid #4CAF50;
+  }
+
+
+
+
+  a:link {
+	text-decoration: none;
+  }
+  
+  a:visited {
+	text-decoration: none;
+  }
+  
+  a:hover {
+	text-decoration: underline;
+  }
+  
+  a:active {
+	text-decoration: underline;
+  }
+
+  .bolded { font-weight: bold; }
+
+  p 
+{ 
+   padding:0px; 
+   margin:0px; 
+}
+
+
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+	opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+	background: #3B5998;
+	color: white;
+  }
+  

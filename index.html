@@ -220,8 +220,7 @@
 				<div class="content" style="width: 400px; padding: 10px;">
 					<input type="checkbox" class="AllFilter" name="Required" value="type"><label for="RequiredCourse">Required Courses</label>
 					<input type="checkbox" class="AllFilter" name="Elective" value="type"><label for="ElectiveCoruse">Elective Courses</label>
-					<input type="checkbox" class="AllFilter" name="Elective" value="type"><label for="ElectiveCoruse">Eligible Courses</label>
-					<input type="checkbox" class="AllFilter" name="Elective" value="type"><label for="ElectiveCoruse">Available Courses</label>
+					<input type="checkbox" class="AllFilter" name="Eligible" value="type"><label for="ElectiveCoruse">Eligible Courses</label>
 					<br>
 					<button style="float: right;" id="FilterAll">Apply</button>
 					<button style="float: right;" id="FilterAllClear">Clear</button>
@@ -232,10 +231,10 @@
 			<div class="search">
 				<div class="search">
 					<div class="search-data">
-					   <input type="text">
+					   <input type="text" id="SearchAll">
 					   <div class="line"></div>
 					   <label>Type to search...</label>
-					   <span class="fas fa-search"></span>
+					   <span class="fas fa-search" id="SearchAllButton"></span>
 					</div>
 			   </div>
 			</div>
@@ -280,53 +279,56 @@
         }
       }
 class Class{
-	constructor(name, section, type){
+	constructor(name, section, type, description, teachers, preReqs){
 		this.name = name;
 		this.section = section;
 		this.type = type;
+		this.description = description;
+		this.teachers = teachers;
+		this.preReqs = preReqs;
 	}
 }
 TakenClasses = [];
 TakenClassesFilter = [];
 const AllClasses = [
-new Class("Program Fundamentals I", "CS 110", "Required"),
-new Class("Program Fundamentals II", "CS 111", "Required"),
-new Class("Foundations of Computer Science", "CS 112", "Required"),
-new Class("Data Structures", "CS 301", "Required"),
-new Class("Advanced Data Structures and File Processing", "CS 302", "Required"),
-new Class("Computer Architecture I", "CS 311", "Required"),
-new Class("Computer Architecture II", "CS 312", "Required"),
-new Class("Technical Writing in Computer Science", "CS 325", "Required"),
-new Class("Principles of Language Design I", "CS 361", "Required"),
-new Class("Principles of Language Design II", "CS 362", "Required"),
-new Class("Introduction to Software Engineering", "CS 380", "Required"),
-new Class("Lab Experience in Teaching Computer Science", "CS 392", "Required"),
-new Class("Database Management Systems", "CS 420", "Required"),
-new Class("Algorithm Analysis", "CS 427", "Required"),
-new Class("Computer Network and Data Communications", "CS 450", "Required"),
-new Class("Operating Systems", "CS 470", "Required"),
-new Class("Advanced Software Engineering", "CS 480", "Required"),
-new Class("Software Engineering Project", "CS 481", "Required"),
-new Class("Senior Colloquium ", "CS 489", "Required"),
-new Class("Lab Experience in Teaching Computer Science", "CS 492", "Required"),
-new Class("Calculus I", "MATH 172", "Required"),
-new Class("Sets and Logic", "MATH 260", "Required"),
-new Class("Discrete Mathematics", "MATH 330", "Required"),
-new Class("Web Development Technologies II", "CS 351", "Elective"),
-new Class("Introduction to Linux", "CS 370", "Elective"),
-new Class("Introduction to Graph Algorithms", "CS 428", "Elective"),
-new Class("Cybersecurity", "CS 430", "Elective"),
-new Class("Computer Graphics", "CS 440", "Elective"),
-new Class("Data and Information Visualization", "CS 445", "Elective"),
-new Class("User Interface Design and Development", "CS 446", "Elective"),
-new Class("Artificial Intelligence", "CS 455", "Elective"),
-new Class("Data Mining", "CS 456", "Elective"),
-new Class("Computational Intelligence and Machine Learning", "CS 457", "Elective"),
-new Class("Software Engineering for Mobile Devices", "CS 460", "Elective"),
-new Class("Scientific Computing", "CS 465", "Elective"),
-new Class("Computational Statistics", "CS 467", "Elective"),
-new Class("Optimization", "CS 471", "Elective"),
-new Class("Parallel Computing", "CS 473", "Elective")
+new Class("Program Fundamentals I", 							"CS 110", "Required", "", ["", ""], []),
+new Class("Program Fundamentals II", 							"CS 111", "Required", "", ["", ""], ["CS 110"]),
+new Class("Foundations of Computer Science", 					"CS 112", "Required", "", ["", ""], []),
+new Class("Data Structures", 									"CS 301", "Required", "", ["", ""], ["CS 111"]),
+new Class("Advanced Data Structures and File Processing", 		"CS 302", "Required", "", ["", ""], ["CS 301", "MATH 172"]),
+new Class("Computer Architecture I", 							"CS 311", "Required", "", ["", ""], ["CS 111"]),
+new Class("Computer Architecture II", 							"CS 312", "Required", "", ["", ""], ["CS 301", "CS 311", "CS 325"]),
+new Class("Technical Writing in Computer Science", 				"CS 325", "Required", "", ["", ""], ["CS 111"]),
+new Class("Principles of Language Design I", 					"CS 361", "Required", "", ["", ""], ["CS 302"]),
+new Class("Principles of Language Design II", 					"CS 362", "Required", "", ["", ""], ["CS 361", "MATH 260"]),
+new Class("Introduction to Software Engineering", 				"CS 380", "Required", "", ["", ""], ["CS 302", "CS 325"]),
+new Class("Lab Experience in Teaching Computer Science", 		"CS 392", "Required", "", ["", ""], ["CS 301"]),
+new Class("Database Management Systems", 						"CS 420", "Required", "", ["", ""], ["CS 302", "CS 325", "MATH 260"]),
+new Class("Algorithm Analysis", 								"CS 427", "Required", "", ["", ""], ["CS 302", "MATH 330"]),
+new Class("Computer Network and Data Communications", 			"CS 450", "Required", "", ["", ""], ["CS 301", "CS 325", "MATH 172"]),
+new Class("Operating Systems", 									"CS 470", "Required", "", ["", ""], ["CS 302", "CS 312", "CS 325", "CS 361"]),
+new Class("Advanced Software Engineering", 						"CS 480", "Required", "", ["", ""], ["CS 325", "CS 380", "CS 420"]),
+new Class("Software Engineering Project", 						"CS 481", "Required", "", ["", ""], ["CS 325", "CS 480", "CS 420"]),
+new Class("Senior Colloquium", 									"CS 489", "Required", "", ["", ""], ["CS 325"]),
+new Class("Lab Experience in Teaching Computer Science", 		"CS 492", "Required", "", ["", ""], ["CS 302", "CS 392"]),
+new Class("Calculus I", 										"MATH 172", "Required", "", ["", ""], []),
+new Class("Sets and Logic", 									"MATH 260", "Required", "", ["", ""], ["MATH 172"]),
+new Class("Discrete Mathematics",				 				"MATH 330", "Required", "", ["", ""], ["MATH 260"]),
+new Class("Web Development Technologies II", 					"CS 351", "Elective", "", ["", ""], ["CS 111"]),
+new Class("Introduction to Linux", 								"CS 370", "Elective", "", ["", ""], ["CS 111", "CS 301", "MATH 172"]),
+new Class("Introduction to Graph Algorithms", 					"CS 428", "Elective", "", ["", ""], ["CS 302", "MATH 330"]),
+new Class("Cybersecurity", 										"CS 430", "Elective", "", ["", ""], ["CS 312"]),
+new Class("Computer Graphics",	 								"CS 440", "Elective", "", ["", ""], ["CS 302", "CS 361", "MATH 260"]),
+new Class("Data and Information Visualization", 				"CS 445", "Elective", "", ["", ""], ["CS 302"]),
+new Class("User Interface Design and Development", 				"CS 446", "Elective", "", ["", ""], ["CS 111"]),
+new Class("Artificial Intelligence", 							"CS 455", "Elective", "", ["", ""], ["CS 302", "CS 325", "CS 362", "MATH 330"]),
+new Class("Data Mining", 										"CS 456", "Elective", "", ["", ""], ["CS 302", "MATH 260"]),
+new Class("Computational Intelligence and Machine Learning", 	"CS 457", "Elective", "", ["", ""], ["CS 302", "MATH 330"]),
+new Class("Software Engineering for Mobile Devices", 			"CS 460", "Elective", "", ["", ""], ["MATH 172"]),
+new Class("Scientific Computing", 								"CS 465", "Elective", "", ["", ""], ["CS 302", "MATH 330"]),
+new Class("Computational Statistics", 							"CS 467", "Elective", "", ["", ""], ["CS 301"]),
+new Class("Optimization", 										"CS 471", "Elective", "", ["", ""], ["CS 302", "CS 325", "MATH 330"]),
+new Class("Parallel Computing", 								"CS 473", "Elective", "", ["", ""], ["CS 361"])
 ];
 AllClassesFilter = [];
 
@@ -366,7 +368,9 @@ for (i = 0; i < coll.length; i++) {
 // FilterTaken Button
 var button = document.getElementById("FilterTaken");
 button.addEventListener("click", FilterClassTaken);
-
+// Filter All
+button = document.getElementById("FilterAll");
+button.addEventListener("click", FilterAllClass)
 // Search Taken
 var button = document.getElementById("SearchTakenButton");
 var textbox = document.getElementById("SearchTaken");
@@ -376,82 +380,35 @@ textbox.addEventListener("keydown", function(event){
 	}
 });
 button.addEventListener("click", SearchClassTaken);
-
-
-
-/*
-
-	-- Event Functions --
-
-*/
-function FilterClassTaken(){
-	var check = document.getElementsByClassName("TakenFilter");
-	TakenClassesFilter = [];
-	for(i = 0; i < check.length; i++){
-		if(check[i].checked){
-			if(check[i].name === "Required"){
-				var j = 0;
-				TakenClasses.forEach(element =>{
-					if(TakenClasses[j].type === "Required"){
-						TakenClassesFilter.push(TakenClasses[j]);
-					}
-					j++;
-				});
-			}
-			if(check[i].name === "Elective"){
-				var j = 0;
-				TakenClasses.forEach(element=>{
-					if(TakenClasses[j].type === "Elective"){
-						TakenClassesFilter.push(TakenClasses[j]);
-					}
-					j++;
-				});
-			}
-			AddTaken();
-		}
+button = document.getElementById("FilterAllClear");
+button.addEventListener("click", function(){
+	var checkbox = document.getElementsByClassName("AllFilter");
+	for(var i = 0; i < checkbox.length; i++){
+		checkbox[i].checked = false;
 	}
-}
-function SearchClassTaken(){
-	var j = 0;
-	var textbox = document.getElementById("SearchTaken");
-	TakenClassesFilter = [];
-	TakenClasses.forEach(element=>{
-		if(TakenClasses[j].section.toLowerCase().includes(textbox.value.toLowerCase()) || TakenClasses[j].name.toLowerCase().includes(textbox.value.toLowerCase())){
-			TakenClassesFilter.push(TakenClasses[j]);
-		}
-		j++;
-	});
-	AddTaken();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	AddClasses();
+})
+button = document.getElementById("FitlerTakenClear");
+button.addEventListener("click", function(){
+	var checkbox = document.getElementsByClassName("TakenFilter");
+	for(var i = 0; i < checkbox.length; i++){
+		checkbox[i].checked = false;
+	}
+	AddClasses();
+})
+button = document.getElementById("SearchAllButton");
+textbox = document.getElementById("SearchAll");
+textbox.addEventListener("keydown", function(event){
+	if(event.keyCode == 13){
+		SearchAll();
+	}
+});
+button.addEventListener("click", SearchAll);
 // Remove Button
 var remove = document.getElementById("RemoveClass");
 remove.addEventListener("click", function(){
 	var check = document.getElementsByClassName("TakenClassCheckbox");
-	for(i = 0; i < check.length; i++){
+	for(var i = 0; i < check.length; i++){
 		if(check[i].checked){
 			var value = check[i].value;
 			var index = 0;
@@ -491,6 +448,134 @@ add.addEventListener("click", function(){
 	AddClasses();
 });
 
+/*
+
+	-- Event Functions --
+
+*/
+function FilterClassTaken(){
+	var check = document.getElementsByClassName("TakenFilter");
+	TakenClassesFilter = [];
+	for(i = 0; i < check.length; i++){
+		if(check[i].checked){
+			if(check[i].name === "Required"){
+				var j = 0;
+				TakenClasses.forEach(element =>{
+					if(TakenClasses[j].type === "Required"){
+						TakenClassesFilter.push(TakenClasses[j]);
+					}
+					j++;
+				});
+			}
+			if(check[i].name === "Elective"){
+				var j = 0;
+				TakenClasses.forEach(element=>{
+					if(TakenClasses[j].type === "Elective"){
+						TakenClassesFilter.push(TakenClasses[j]);
+					}
+					j++;
+				});
+			}
+			AddTaken();
+		}
+	}
+}
+function FilterAllClass(){
+	var check = document.getElementsByClassName("AllFilter");
+	AllClassesFilter = [];
+	var Required = false;
+	var Elective = false;
+	var Eligible = false;
+	var Available = false;
+
+	for(i = 0; i < check.length; i++){
+		if(check[i].checked){
+			if(check[i].name === "Required"){
+				Required = true;
+			}
+			if(check[i].name === "Elective"){
+				Elective = true;
+			}
+			if(check[i].name === "Eligible"){
+				Eligible = true;
+			}
+			if(check[i].name === "Available"){
+				Available = true;
+			}
+			
+		}
+	}
+	if(((Required || Elective) && (Eligible || Available)) || (Eligible && Available)){
+		return;
+	}
+	if(Required){
+		var j = 0;
+		AllClasses.forEach(element =>{
+			if(AllClasses[j].type === "Required"){
+				AllClassesFilter.push(AllClasses[j]);
+			}
+			j++;
+		});
+	}
+	if(Elective){
+		var j = 0;
+		AllClasses.forEach(element=>{
+			if(AllClasses[j].type === "Elective"){
+				AllClassesFilter.push(AllClasses[j]);
+			}
+			j++;
+		});
+	}
+	if(Eligible){
+		var j = 0;
+		AllClasses.forEach(item=>{
+			var PreReqs = AllClasses[j].preReqs;
+			const containsAll = PreReqs.every(element=>{
+				var contains = false;
+				var i = 0;
+				TakenClasses.forEach(classTaken=>{
+					if(TakenClasses[i++].section === element){
+						contains = true;
+					}
+				})
+				return contains;
+			});
+			if(containsAll){
+				AllClassesFilter.push(AllClasses[j]);
+			}
+			j++;
+		});
+	}
+	if(Available){
+
+	}
+	AddAll();
+}
+function SearchClassTaken(){
+	var j = 0;
+	var textbox = document.getElementById("SearchTaken");
+	TakenClassesFilter = [];
+	TakenClasses.forEach(element=>{
+		if(TakenClasses[j].section.toLowerCase().includes(textbox.value.toLowerCase()) || TakenClasses[j].name.toLowerCase().includes(textbox.value.toLowerCase())){
+			TakenClassesFilter.push(TakenClasses[j]);
+		}
+		j++;
+	});
+	AddTaken();
+}
+function SearchAll(){
+	var j = 0;
+	var textbox = document.getElementById("SearchAll");
+	AllClassesFilter = [];
+	AllClasses.forEach(element=>{
+		if(AllClasses[j].section.toLowerCase().includes(textbox.value.toLowerCase()) || AllClasses[j].name.toLowerCase().includes(textbox.value.toLowerCase())){
+			AllClassesFilter.push(AllClasses[j]);
+		}
+		j++;
+	});
+	AddAll();
+}
+// Apply filter to Taken UI
 function AddTaken(){
 	var i = 0;
 	var str = "";
@@ -500,9 +585,18 @@ function AddTaken(){
 	document.getElementById("list1").innerHTML = str;
 	ResetCollapsibleButtons();
 }
-function AddAll(All){
-
+// Apply filter to All UI
+function AddAll(){
+	var i = 0;
+	var str = "";
+	AllClassesFilter.forEach(element=>{
+		str += '<div class="classButtonContainer"><input type="checkbox" class="AllClassCheckbox" value="'+ AllClassesFilter[i].section +'"><button class="classButton" >'+ AllClassesFilter[i].section + ' | ' + AllClassesFilter[i++].name +'</button><div class="classContent"><p style="color: black;">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div>';
+	});
+	document.getElementById("list").innerHTML = str;
+	ResetCollapsibleButtons();
 }
+
+// Adds all classes to UI
 function AddClasses(){
 	// Code to place all classes taken buttons
 	var i = 0;

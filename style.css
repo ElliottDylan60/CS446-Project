@@ -616,6 +616,7 @@ body{
 	  background-color: d3d3d3;	
 	  padding-left: 10px;
 	  overflow-y: scroll;
+	  overflow-x: hidden;
   }
   .classButtonContainer{
 	  background-color: #333333;

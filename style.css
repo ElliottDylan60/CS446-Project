@@ -249,17 +249,31 @@ body{
 	  opacity: 1;
 	  transition: all 0.35s;
   }
-  .ContactButton{
-	  background-color: #333333;
-	  color: #d3d3d3;
-	  cursor: pointer;
-	  padding: 18px;
-	  width: 140px;
-	  border: none;
-	  text-align: center;
-	  outline: none;
-	  font-size: 15px;
-	  margin-left: 10px;
+  .RemoveButton{
+	background-color: #333333;
+	color: #d3d3d3;
+	cursor: pointer;
+	width: 100px;
+	height: 20px;
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	margin: 10px;
+	float: right;
+  }
+  .AddButton{
+	background-color: #333333;
+	color: #d3d3d3;
+	cursor: pointer;
+	width: 100px;
+	height: 20px;
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	margin: 10px;
+	float: right;
   }
   /* Classes Taken */
   #ClassesTaken{
@@ -276,8 +290,8 @@ body{
   /* All Classes */
   #AllClasses{
 	  background-color: #333333;
-	  width: 500px;
-	  height: 500px;
+	  width: 32rem;
+	  height: 32rem;
 	  margin: auto;
   }
   #AllClasses h1{
@@ -448,7 +462,7 @@ body{
 	  margin: 3rem 0;
 	  background: #333333;
 	  height: 14.75rem;
-	  width: 35rem;
+	  width: 100%;
 	  margin: auto;
   }
   .tabs::before,
@@ -483,7 +497,7 @@ body{
   }
   .tab-content {
 	  height: 12rem;
-	  width: 35rem;
+	  width: 100%;
 	  position: absolute;
 	  z-index: 1;
 	  top: 2.75em;
@@ -509,22 +523,36 @@ body{
 	  opacity: 1;
 	  transition: all 0.35s;
   }
-  .ContactButton{
-	  background-color: #333333;
-	  color: #d3d3d3;
-	  cursor: pointer;
-	  padding: 18px;
-	  width: 140px;
-	  border: none;
-	  text-align: center;
-	  outline: none;
-	  font-size: 15px;
-	  margin-left: 10px;
+  .RemoveButton{
+	background-color: #333333;
+	color: #d3d3d3;
+	cursor: pointer;
+	width: 100px;
+	height: 20px;
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	margin: 10px;
+	float: right;
+  }
+  .AddButton{
+	background-color: #333333;
+	color: #d3d3d3;
+	cursor: pointer;
+	width: 100px;
+	height: 20px;
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	margin: 10px;
+	float: right;
   }
   /* Classes Taken */
   #ClassesTaken{
 	  background-color: #333333;
-	  width: 32rem;
+	  width: 100%;
 	  height: 32rem;
 	  margin: auto;
   }
@@ -536,8 +564,8 @@ body{
   /* All Classes */
   #AllClasses{
 	  background-color: #333333;
-	  width: 500px;
-	  height: 500px;
+	  width: 100%;
+	  height: 32rem;
 	  margin: auto;
   }
   #AllClasses h1{
@@ -581,7 +609,7 @@ body{
   }
   /* Class List */
   .classList{
-	  width: 450px;
+	  width: 90%;
 	  height: 332px;
 	  margin: auto;
 	  margin-top: 20px;
@@ -593,7 +621,7 @@ body{
 	  background-color: #333333;
 	  color: #d3d3d3;
 	  cursor: pointer;
-	  width: 410px;
+	  width: 98%;
 	  border: none;
 	  text-align: left;
 	  outline: none;
@@ -604,12 +632,13 @@ body{
   .classButton{
 	  text-align: left; 
 	  padding-left: 10px; 
-	  width: 389px; 
+	  width: 88%; 
 	  height: 50px; 
 	  background-color: rgba(0,0,0,0); 
 	  border: rgba(0,0,0,0); 
 	  color: #d3d3d3; 
 	  font-size: 15px;
+	  white-space: pre;
   }
   .classCheckbox{
 	  float: left; 
@@ -617,7 +646,7 @@ body{
   }
   .classContent{
 	  padding: 0 18px;
-	  width: 370px;
+	  width: 90%;
 	  display: none;
 	  overflow: hidden;
 	  background-color: #d3d3d3;

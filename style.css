@@ -484,7 +484,7 @@ body{
 	  display: block;
 	  line-height: 2.75em;
 	  height: 3em;
-	  padding: 0 1.618em;
+	  padding: 5px;
 	  background: #333333;
 	  color: #d3d3d3;
 	  cursor: pointer;

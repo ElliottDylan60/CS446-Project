@@ -1,6 +1,6 @@
 * {
 	box-sizing: border-box;
-	
+	color: #000;
 }
 body{
 	background-image: url('Background.png');
@@ -10,13 +10,85 @@ body{
 	background-position: center;
 }
 
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+  }
+
+  .topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+
+  .topnav a:hover {
+	background-color: #ddd;
+	color: black;
+  }
+
+  .topnav a.active {
+	background-color: #cc1540;
+	color: white;
+  }
+
+  .topnav .icon {
+	display: none;
+  }
 
 
 
-
-
-
-
+/* Search */
+.search-data{
+	position: relative;
+	bottom: 15px;
+	margin-right: 10px;
+	height: 40px;
+	width: 200px;
+	display: flex;
+	text-align: center;
+	/* display: none; */
+}
+.search-data input{
+	height: 100%;
+	width: 100%;
+	background: none;
+	border: none;
+	outline: none;
+	font-size: 22px;
+	font-weight: 500;
+	color: #d3d3d3;
+}
+.search-data .line{
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	background: #d3d3d3;
+	bottom: 0; 
+}
+.search-data label{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	font-size: 20px;
+	transform: translateY(-50%);
+	pointer-events: none;
+	color: #d3d3d3;
+}
+.search-data input:valid ~ label{
+	display: none;
+}  
+.search-data span{
+	color: #d3d3d3;
+	position: absolute; 
+	right: 0;
+	top: 0;
+	line-height: 45px;
+	cursor: pointer;
+}
 
 
 
@@ -48,11 +120,6 @@ body{
 	float: left;
 	width: 20%;
 	padding: 10px;
-}
-#header{
-	background-color: #000000;
-	width: 200px;
-	margin: auto;
 }
 
 #footer{
@@ -333,6 +400,23 @@ body{
 
 */
 @media screen and (max-width: 1000px){
+/* Navigation Bar */
+.topnav a:not(:first-child) {display: none;}
+.topnav a.icon {
+  float: right;
+  display: block;
+}
+.topnav.responsive {position: relative;}
+.topnav.responsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+}
 /* Page Format */
 #Lcolumn {
 	display: none;
@@ -342,11 +426,6 @@ body{
 }
 #Rcolumn {
 	display: none;
-}
-#header{
-	background-color: #000000;
-	width: 200px;
-	margin: auto;
 }
 #footer{
 
@@ -604,7 +683,7 @@ body{
 }
 
 
-.fa {
+.fa-facebook {
 	padding: 20px;
 	font-size: 30px;
 	width: 50px;
@@ -627,14 +706,12 @@ body{
   
   #postcard .line
 {
-	color: white;
+	color: #000;
     width: 100%;
-	background-color: #050100;
     border-bottom: 1px solid #000;
 	font-size: 25;
 	text-align: left;
 }
-
 
 
 

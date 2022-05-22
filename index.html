@@ -2,6 +2,11 @@
 <head>
 	<title>CS 446 Lab 5</title>
 	<link rel="stylesheet" href="style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	
 </head>
 <style>
 </style>
@@ -9,8 +14,17 @@
 	<div id="wrapper">
 
 	<div id="header">
-		<div id="test"></div>
-		<img id="logo" src="logo.png">
+		<div class="topnav" id="myTopnav">
+			<a href="#home" class="active">Welcome</a>
+			<a href="#news">Admissions</a>
+			<a href="#contact">Academics</a>
+			<a href="#about">About</a>
+			<a href="#about">Student Services</a>
+			<a href="#about">Get Involved</a>
+			<a href="javascript:void(0);" class="icon" onclick="navBarFunction()">
+			  <i class="fa fa-bars"></i>
+			</a>
+		</div>
 	</div>
 
 	<!-- Left Column -->
@@ -112,7 +126,7 @@
 <br>
 <div class = "line"style="font-size:20px; color:BLACK;border-bottom: 1px solid #000" ><b>FOLLOW US</b></div><br>
 <br>
-<a href = "https://www.facebook.com/cs.cwu/"class="fa fa-facebook">f</a>
+<a href = "https://www.facebook.com/cs.cwu/"class="fa fa-facebook"></a>
 
 			</div>
 		</div>
@@ -189,10 +203,14 @@
 			</div>
 			
 			<div class="search">
-				<form>
-					<input type="text" placeholder="Serach..." name="serach" style="width: 150px;">
-					<button type="submit">Search</button>
-				</form>
+				<div class="search">
+					<div class="search-data">
+					   <input type="text" required>
+					   <div class="line"></div>
+					   <label>Type to search...</label>
+					   <span class="fas fa-search"></span>
+					</div>
+			   </div>
 			</div>
 			<div class = "classList">
 				<div id="list1">
@@ -215,10 +233,14 @@
 			</div>
 			
 			<div class="search">
-				<form>
-					<input type="text" placeholder="Serach..." name="serach" style="width: 150px;">
-					<button type="submit">Search</button>
-				</form>
+				<div class="search">
+					<div class="search-data">
+					   <input type="text" required>
+					   <div class="line"></div>
+					   <label>Type to search...</label>
+					   <span class="fas fa-search"></span>
+					</div>
+			   </div>
 			</div>
 			<div class = "classList">
 				<div id="list">
@@ -252,6 +274,14 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 <script>
+	function navBarFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
 class Class{
 	constructor(name, section, type){
 		this.name = name;

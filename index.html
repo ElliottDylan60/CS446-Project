@@ -297,9 +297,9 @@ class Class{
 TakenClasses = [];
 TakenClassesFilter = [];
 const AllClasses = [
-new Class("Program Fundamentals I", 							"CS 110", "Required", "Fundamental concepts of programming from an object-oriented perspective. Classes, objects and methods, algorithm development, problem-solving techniques, basic control structures, primitive types and arrays.", 																																					["Tatiana Harrison", "Dmytro Dovhalets"], []),
+new Class("Program Fundamentals I", 							"CS 110", "Required", "Fundamental concepts of programming from an object-oriented perspective. Classes, objects and methods, algorithm development, problem-solving techniques, basic control structures, primitive types and arrays.", 																																					["Tatiana Harrison", "Dmytro Dovhalets"], null),
 new Class("Program Fundamentals II", 							"CS 111", "Required", "Continuation of object-oriented programming concepts introduced in CS 110. Inheritance, exceptions, graphical user interfaces, recursion, and data structures.", 																																																	["Tatiana Harrison", "Dmytro Dovhalets"], ["CS 110"]),
-new Class("Foundations of Computer Science", 					"CS 112", "Required", "This course is an introduction to the Python programming language with the following Data Science topics; data pre-processing, working with categorical and textual data, data parsing, data and natural language processing and data visualization", 																												["Sarah Abdul-Wahid"], []),
+new Class("Foundations of Computer Science", 					"CS 112", "Required", "This course is an introduction to the Python programming language with the following Data Science topics; data pre-processing, working with categorical and textual data, data parsing, data and natural language processing and data visualization", 																												["Sarah Abdul-Wahid"], null),
 new Class("Data Structures", 									"CS 301", "Required", "Introduction to elementary data structures (arrays, lists, stacks, queues, deques, binary trees) and their Java implementation as abstract data types.", 																																																			["Dmytro Dovhalets"], ["CS 111"]),
 new Class("Advanced Data Structures and File Processing", 		"CS 302", "Required", "Sequential, random access and indexed file organizations; B-trees; external searching and sorting; I/O buffering. Course will be offered every year. Course will not have an established scheduling pattern.", 																																						["Staff"], ["CS 301", "MATH 172"]),
 new Class("Computer Architecture I", 							"CS 311", "Required", "Introduction to computer architecture, data representations, assembly language, addressing techniques.", 																																																															["Donald Davendra"], ["CS 111"]),
@@ -317,7 +317,7 @@ new Class("Advanced Software Engineering", 						"CS 480", "Required", "Advanced
 new Class("Software Engineering Project", 						"CS 481", "Required", "Continuation of coding, testing, and implementation phases of project begun in CS 480. Course will be offered every year. Course will not have an established scheduling pattern.", 																																													["Staff"], ["CS 325", "CS 480", "CS 420"]),
 new Class("Senior Colloquium", 									"CS 489", "Required", "Introduction to research in computer science through investigation of ethical and historical topics in the field. End-of-major assessment activities. Course will be offered every year. Course will not have an established scheduling pattern.", 																													["Staff"], ["CS 325"]),
 new Class("Lab Experience in Teaching Computer Science", 		"CS 492", "Required", "Supervised progressive experience in developing procedures and technique in teaching computer science. May be repeated to a maximum total of 16 credits. Grade will be S or U.", 																																													["Staff"], ["CS 302", "CS 392"]),
-new Class("Calculus I", 										"MATH 172", "Required", "Theory, techniques, and applications of differentiation and integration of the elementary functions.", 																																																															["Staff"], []),
+new Class("Calculus I", 										"MATH 172", "Required", "Theory, techniques, and applications of differentiation and integration of the elementary functions.", 																																																															["Staff"], null),
 new Class("Sets and Logic", 									"MATH 260", "Required", "Essentials of mathematical proofs, including use of quantifiers and principles of valid inference. Set theory as a mathematical system.", 																																																							["Staff"], ["MATH 172"]),
 new Class("Discrete Mathematics",				 				"MATH 330", "Required", "Topics from logic, combinatorics, counting techniques, graph theory, and theory of finite-state machines.", 																																																														["Staff"], ["MATH 260"]),
 new Class("Web Development Technologies II", 					"CS 351", "Elective", "Server-side technologies for web software development including programming languages, database access, e-commerce, testing, and ethical issues related to the web. Course will not have an established scheduling pattern.", 																																		["Staff"], ["CS 111"]),
@@ -336,6 +336,7 @@ new Class("Computational Statistics", 							"CS 467", "Elective", "Applications
 new Class("Optimization", 										"CS 471", "Elective", "Unimodal and Multimodal problems; combinatorial optimization problems; deterministic algorithms; Hill climbing algorithm; Tabu Search Algorithm; Evolutionary algorithms; Particle swarm optimization; Differential evolution; Single and Mutli-objective optimization.", 																							["Staff"], ["CS 302", "CS 325", "MATH 330"]),
 new Class("Parallel Computing", 								"CS 473", "Elective", "Major parallel architectures and languages. Parallel programming methodologies and applications. CS 473 and CS 573 are layered courses; students may not receive credit for both. Course will not have an established scheduling pattern.", 																															["Staff"], ["CS 361"])
 ];
+
 AllClassesFilter = [];
 
 AddClasses();
@@ -586,7 +587,7 @@ function AddTaken(){
 	var i = 0;
 	var str = "";
 	TakenClassesFilter.forEach(element=>{
-		str += '<div class="classButtonContainer"><input type="checkbox" class="TakenClassCheckbox" value="'+ TakenClassesFilter[i].section +'"><button class="classButton" >'+ TakenClassesFilter[i].section + ' | ' + TakenClassesFilter[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ TakenClassesFilter[i].description +'</p><br><p>Teachers: '+ TakenClassesFilter[i++].teachers +'</p></div></div>';
+		str += '<div class="classButtonContainer"><input type="checkbox" class="TakenClassCheckbox" value="'+ TakenClassesFilter[i].section +'"><button class="classButton" >'+ TakenClassesFilter[i].section + ' | ' + TakenClassesFilter[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ TakenClassesFilter[i].description +'</p><br><p>Prerequisites: '+  (TakenClassesFilter[i].preReqs === null ? "None" : TakenClassesFilter[i].preReqs) +'</p><br><p>Teachers: '+ TakenClassesFilter[i++].teachers +'</p></div></div>';
 	});
 	document.getElementById("list1").innerHTML = str;
 	ResetCollapsibleButtons();
@@ -596,7 +597,7 @@ function AddAll(){
 	var i = 0;
 	var str = "";
 	AllClassesFilter.forEach(element=>{
-		str += '<div class="classButtonContainer"><input type="checkbox" class="AllClassCheckbox" value="'+ AllClassesFilter[i].section +'"><button class="classButton" >'+ AllClassesFilter[i].section + ' | ' + AllClassesFilter[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ AllClassesFilter[i].description +'</p><br><p>Teachers: '+ AllClassesFilter[i++].teachers +'</p></div></div>';
+		str += '<div class="classButtonContainer"><input type="checkbox" class="AllClassCheckbox" value="'+ AllClassesFilter[i].section +'"><button class="classButton" >'+ AllClassesFilter[i].section + ' | ' + AllClassesFilter[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ AllClassesFilter[i].description +'</p><br><p>Prerequisites: '+ (AllClassesFilter[i].preReqs === null ? "None" : AllClassesFilter[i].preReqs) +'</p><br><p>Teachers: '+ AllClassesFilter[i++].teachers +'</p></div></div>';
 	});
 	document.getElementById("list").innerHTML = str;
 	ResetCollapsibleButtons();
@@ -608,14 +609,14 @@ function AddClasses(){
 	var i = 0;
 	var str = "";
 	TakenClasses.forEach(element =>{
-		str += '<div class="classButtonContainer"><input type="checkbox" class="TakenClassCheckbox" value="'+ TakenClasses[i].section +'"><button class="classButton" >'+ TakenClasses[i].section + ' | ' + TakenClasses[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ TakenClasses[i].description +'</p><br><p>Teachers: '+ TakenClasses[i++].teachers +'</p></div></div>';
+		str += '<div class="classButtonContainer"><input type="checkbox" class="TakenClassCheckbox" value="'+ TakenClasses[i].section +'"><button class="classButton" >'+ TakenClasses[i].section + ' | ' + TakenClasses[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ TakenClasses[i].description +'</p><br><p>Prerequisites: '+ (TakenClasses[i].preReqs === null ? "None" : TakenClasses[i].preReqs) +'</p><br><p>Teachers: '+ TakenClasses[i++].teachers +'</p></div></div>';
 	});
 	document.getElementById("list1").innerHTML = str;
 	i = 0;
 	// Code to place all class buttons
 	var str = "";
 	AllClasses.forEach(element =>{
-		str += '<div class="classButtonContainer"><input type="checkbox" class="AllClassCheckbox" value="'+ AllClasses[i].section +'"><button class="classButton" >'+ AllClasses[i].section + ' | ' + AllClasses[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ AllClasses[i].description +'</p><br><p>Teachers: '+ AllClasses[i++].teachers +'</p></div></div>';	
+		str += '<div class="classButtonContainer"><input type="checkbox" class="AllClassCheckbox" value="'+ AllClasses[i].section +'"><button class="classButton" >'+ AllClasses[i].section + ' | ' + AllClasses[i].name +'</button><div class="classContent"><p style="color: black;">Description: '+ AllClasses[i].description +'</p><br><p>Prerequisites: '+ (AllClasses[i].preReqs === null ? "None" : AllClasses[i].preReqs) +'</p><br><p>Teachers: '+ AllClasses[i++].teachers +'</p></div></div>';	
 	});
 	document.getElementById("list").innerHTML = str;
 	ResetCollapsibleButtons();
